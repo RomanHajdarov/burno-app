@@ -1,3 +1,123 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .section {
+    @apply sm:p-10;
+  }
+
+  .text-plain {
+    @apply flex-wrap font-bold text-8xl bg-clip-text text-stone-700 dark:text-orange-100;
+  }
+
+  #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8%;
+  }
+
+  .body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .home-section-container {
+    display: flex;
+    margin-top: 10%;
+
+  }
+  
+  .text {
+    flex: 1;
+    padding-left: 23%;
+    margin-bottom: 11%;
+
+  }
+  
+  .picture {
+    display: flex;
+    justify-content: flex-center;
+    margin-left: -35%;
+    rotate: 10deg;
+  }
+  
+  .home-section-image {
+    max-width: 200%;
+    min-width: auto;
+    margin-top: -19%;
+  }
+  
+  .container2 {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .logos {
+   align-items: center;
+   margin-right: -3.5%;   
+
+  }
+ 
+  .app__controls__counter {
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: center;  }
+
+  .btn__delete__all {
+    background-color: rgb(220, 224, 255);
+    border-radius: 5px;
+    padding: 4px;
+    margin-left: 1em;
+  }
+
+  .app__controls__inputs input {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 1em;
+    border-style: solid;
+  }
+
+  .app__controls__inputs__add__meals {
+    background-color: rgb(231, 234, 255);
+    border-radius: 5px;
+    padding: 4px;
+    margin-left: 1em;
+  }
+
+  .app__meals__container{
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .app__meals__container__wrapper {
+    height: auto;
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    background-color: white;
+
+  }
+
+  .app__meals__container__wrapper__inner{
+    width: 50%;
+    height:50 px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.1px solid rgba(0,0,0,0.2);
+    border-radius: 10px;;
+    padding: 1% 2%;
+  }
+
+}
