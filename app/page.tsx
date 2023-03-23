@@ -11,8 +11,6 @@ import AppMealsList from "./AppMealsList/AppMealsList";
 
 
 
-
-
 const HomePage = () => {
   const[meals, setMeals] = useState ([]);
   const [mealName,setMealName] = useState("");
@@ -27,21 +25,26 @@ const HomePage = () => {
       id:Math.floor(Math.random()*1000),
     };
 
-    const newMeals = oldMeals.concat(meal);
+    const newMeals = [...oldMeals, meal];
 
     if(calories <=0 || mealName === "" ){
       alert("must not be empty")
      } else {
-      setMeals(newMeals)
-     }
+      setMeals(newMeals);
+     };
 
      setMealName("");
      setCalories(0);
-
-
     
   };
 
+  const deleteMealHandler = (id:string) => { //immer das Problem mit Parameter 'id' implicitly has an 'any' type.ts(7006) "muss hier eine z.b.: eine string einpflegen"
+    const oldMeals = [...meals];
+    const newMeals = oldMeals.filter((meal)=>meal.id !== id);
+
+    setMeals(newMeals) 
+  };
+ 
   return (
     <div className="overflow-x-hidden">
     <HomeSection />
@@ -51,7 +54,7 @@ const HomePage = () => {
     <AppControlsInputs addMealsHandler={addMealsHandler} mealName={mealName} calories ={calories}
     setMealName={setMealName} setCalories={setCalories}/>
     <div className="app__meals__container">
-      <AppMealsList meals={meals}/>
+      <AppMealsList meals={meals} deleteMealHandler ={deleteMealHandler}/>
     </div>
     <Result/>
     <Footer/>
